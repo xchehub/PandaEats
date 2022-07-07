@@ -1,0 +1,95 @@
+[
+    {
+      "name":"Dominos Pizza",
+      "address":"Taipei DaAn district",
+      "delivery_charge": 50,
+      "image":"https://img3.coupontw.com/201806/2018/0616/6d/f/522832/original.png",
+
+      "hours":{
+        "Sunday":"11:00 AM - 7:00 PM",
+        "Monday":"10:00 AM - 9:00 PM",
+        "Tuesday":"10:00 AM - 10:00 PM",
+        "Wednesday":"10:00 AM - 11:00 PM",
+        "Thursday":"10:00 AM - 10:00 PM",
+        "Friday":"10:00 AM - 11:00 PM",
+        "Saturday":"10:00 AM - 2:00 PM"
+      },
+      "menus": [
+        {
+          "name": "pizza A",
+          "price": 250.00,
+          "url": "https://nmgprod.s3.amazonaws.com/media/files/2f/3b/2f3be21f751f82d7098fce3ee177dbce/cover_image_1633025657.jpg"
+        },
+        {
+          "name": "Spaghettios Pizza",
+          "price": 300.99,
+          "url": "https://image.pizzahut.com.tw/dynamic/content/7b02748ef2ba8224b7f8dd608b7e2e91.jpg"
+        },
+        {
+          "name": "Hawaii Pizza",
+          "price": 150.99,
+          "url": "https://image.pizzahut.com.tw/dynamic/content/08973141c5dae25a83a0da3c78374fcc.jpg"
+        }
+      ]
+    },
+    {
+      "name":"Costco Hotdogs",
+      "address":"Taipei NeiHu",
+      "delivery_charge": 50,
+      "image":"https://i.ebayimg.com/images/g/LCUAAOSwgYlcvCtg/s-l1600.jpg",
+
+      "hours":{
+        "Sunday":"11:00 AM - 7:00 PM",
+        "Monday":"10:00 AM - 10:00 PM",
+        "Tuesday":"10:00 AM - 10:00 PM",
+        "Wednesday":"10:00 AM - 8:00 PM",
+        "Thursday":"10:00 AM - 10:00 PM",
+        "Friday":"10:00 AM - 10:00 PM",
+        "Saturday":"9:00 AM - 1:00 PM"
+      },
+      "menus": [
+        {
+          "name": "Hot Dog",
+          "price": 50.00,
+          "url": "https://www.mashed.com/img/gallery/this-is-why-costcos-hot-dogs-are-so-delicious/intro-1547843477.jpg"
+        },
+        {
+          "name": "Cheese Dog",
+          "price": 100.00,
+          "url": "https://i.redd.it/dd3gn8pumoy71.jpg"
+        },
+        {
+          "name": "McMuffin Meal",
+          "price": 120.00,
+          "url": "https://www.costco.com.au/mediapermalink/COS01-food-court-hot-dog-d"
+        }
+      ]
+    },
+  {
+    "name":"McDonald's",
+    "address":"Taipei everywhere",
+    "delivery_charge": 50,
+    "image":"https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/McDonald%27s_Golden_Arches.svg/200px-McDonald%27s_Golden_Arches.svg.png",
+    "hours":{
+      "Sunday":"09:00 AM - 7:00 PM",
+      "Monday":"09:00 AM - 10:00 PM",
+      "Tuesday":"09:00 AM - 10:00 PM",
+      "Wednesday":"09:00 AM - 8:00 PM",
+      "Thursday":"09:00 AM - 10:00 PM",
+      "Friday":"09:00 AM - 10:00 PM",
+      "Saturday":"9:00 AM - 2:00 PM"
+    },
+    "menus": [
+      {
+        "name": "No.1 set",
+        "price": 80.00,
+        "url": "https://b.zmtcdn.com/data/pictures/chains/3/16691123/de83220038018da140ea977b92c7ea83.jpg"
+      },
+      {
+        "name": "McMuffin Meal",
+        "price": 80.00,
+        "url": "https://s7d1.scene7.com/is/image/mcdonalds/t-mcdonalds-Big-Mac-1:1-4-product-tile-desktop"
+      }
+    ]
+  }
+]
