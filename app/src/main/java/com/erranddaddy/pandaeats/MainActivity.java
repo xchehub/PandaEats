@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
+import com.erranddaddy.pandaeats.adapter.RestaurantListAdapter;
 import com.erranddaddy.pandaeats.model.RestaurantModel;
 import com.google.gson.Gson;
 
@@ -21,7 +22,7 @@ import java.io.Writer;
 import java.util.Arrays;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements RestaurantListAdapter.RestaurantListClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,14 +34,15 @@ public class MainActivity extends AppCompatActivity {
 
         List<RestaurantModel> restaurantModelList = getRestaurantData();
 
-        initRecyclerView();
+        initRecyclerView(restaurantModelList);
     }
 
-    private void initRecyclerView() {
+    private void initRecyclerView(List<RestaurantModel>  restaurantModelList) {
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        recyclerView.setAdapter();
+        RestaurantListAdapter adapter = new RestaurantListAdapter(restaurantModelList, this);
+        recyclerView.setAdapter(adapter);
     }
 
     private List<RestaurantModel> getRestaurantData() {
@@ -51,8 +53,7 @@ public class MainActivity extends AppCompatActivity {
         try {
             Reader reader = new BufferedReader(new InputStreamReader(is, "UTF-8"));
             int n = 0;
-            while ( n != -1) {
-                n = reader.read(buffer);
+            while ( (n = reader.read(buffer)) != -1) {
                 writer.write(buffer, 0, n);
             }
         } catch (UnsupportedEncodingException e) {
@@ -67,5 +68,10 @@ public class MainActivity extends AppCompatActivity {
         List<RestaurantModel> restList = Arrays.asList(restaurantModels);
 
         return restList;
+    }
+
+    @Override
+    public void onItemClick(RestaurantModel restaurantModel) {
+
     }
 }
