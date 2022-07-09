@@ -7,11 +7,21 @@ public class Menu implements Parcelable {
     private String name;
     private float price;
     private String url;
+    private int totalInCart;
 
     protected Menu(Parcel in) {
         name = in.readString();
         price = in.readFloat();
         url = in.readString();
+        totalInCart = in.readInt();
+    }
+
+    public int getTotalInCart() {
+        return totalInCart;
+    }
+
+    public void setTotalInCart(int totalInCart) {
+        this.totalInCart = totalInCart;
     }
 
     public static final Creator<Menu> CREATOR = new Creator<Menu>() {
@@ -60,5 +70,6 @@ public class Menu implements Parcelable {
         parcel.writeString(name);
         parcel.writeFloat(price);
         parcel.writeString(url);
+        parcel.writeInt(totalInCart);
     }
 }

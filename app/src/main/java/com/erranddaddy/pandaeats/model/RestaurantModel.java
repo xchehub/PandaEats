@@ -53,6 +53,14 @@ public class RestaurantModel implements Parcelable {
         this.hours = hours;
     }
 
+    public List<Menu> getMenus() {
+        return menus;
+    }
+
+    public void setMenus(List<Menu> menus) {
+        this.menus = menus;
+    }
+
     protected RestaurantModel(Parcel in) {
         name = in.readString();
         address = in.readString();

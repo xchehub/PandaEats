@@ -1,6 +1,6 @@
 [
     {
-      "name":"Dominos Pizza",
+      "name":"達美了 Dominos Pizza",
       "address":"Taipei DaAn district",
       "delivery_charge": 50,
       "image":"https://img3.coupontw.com/201806/2018/0616/6d/f/522832/original.png",
@@ -16,12 +16,12 @@
       },
       "menus": [
         {
-          "name": "pizza A",
+          "name": "必勝課 pizza A",
           "price": 250.00,
           "url": "https://nmgprod.s3.amazonaws.com/media/files/2f/3b/2f3be21f751f82d7098fce3ee177dbce/cover_image_1633025657.jpg"
         },
         {
-          "name": "Spaghettios Pizza",
+          "name": "Spaghetti's Pizza",
           "price": 300.99,
           "url": "https://image.pizzahut.com.tw/dynamic/content/7b02748ef2ba8224b7f8dd608b7e2e91.jpg"
         },
@@ -33,7 +33,7 @@
       ]
     },
     {
-      "name":"Costco Hotdogs",
+      "name":"好事 Costco Hot dog",
       "address":"Taipei NeiHu",
       "delivery_charge": 50,
       "image":"https://i.ebayimg.com/images/g/LCUAAOSwgYlcvCtg/s-l1600.jpg",
@@ -66,7 +66,7 @@
       ]
     },
   {
-    "name":"McDonald's",
+    "name":"麥噹當 McDonald's",
     "address":"Taipei everywhere",
     "delivery_charge": 50,
     "image":"https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/McDonald%27s_Golden_Arches.svg/200px-McDonald%27s_Golden_Arches.svg.png",
