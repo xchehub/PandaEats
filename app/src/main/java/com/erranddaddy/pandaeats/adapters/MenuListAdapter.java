@@ -1,4 +1,4 @@
-package com.erranddaddy.pandaeats.adapter;
+package com.erranddaddy.pandaeats.adapters;
 
 import android.view.LayoutInflater;
 import android.view.View;

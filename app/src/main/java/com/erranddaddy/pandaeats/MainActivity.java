@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.erranddaddy.pandaeats.adapter.RestaurantListAdapter;
+import com.erranddaddy.pandaeats.adapters.RestaurantListAdapter;
 import com.erranddaddy.pandaeats.model.RestaurantModel;
 import com.google.gson.Gson;
 
