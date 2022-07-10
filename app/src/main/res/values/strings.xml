@@ -1,3 +1,29 @@
 <resources>
     <string name="app_name">PandaEats</string>
+    <string name="checkout">Checkout</string>
+    <string name="add_to_cart">add to cart</string>
+    <string name="customer_details">Customer Details</string>
+    <string name="pickup">Pickup</string>
+    <string name="delivery">Delivery</string>
+    <string name="enter_your_name">Enter your name</string>
+    <string name="enter_your_address">Enter your address</string>
+    <string name="enter_your_city">Enter your city</string>
+    <string name="enter_your_state">Enter your state</string>
+    <string name="enter_your_zip">Enter your zip</string>
+    <string name="card_details">Card Details</string>
+    <string name="enter_card_number">Enter Card Number</string>
+    <string name="enter_card_expiry_mm_yyyy">Enter Card expiry(mm/yyyy)</string>
+    <string name="enter_card_pin_3_digits">Enter Card pin(3 digits)</string>
+    <string name="total_items_in_cart">Total items in cart</string>
+    <string name="sub_total">Sub total</string>
+    <string name="delivery_charge">Delivery Charge</string>
+    <string name="total">Total</string>
+    <string name="place_your_order">Place your order</string>
+    <string name="order_places_successfully">Order places successfully.</string>
+    <string name="RestaurantList">Restaurant List</string>
+    <string name="CheckoutItems">Checkout (</string>
+    <string name="Items">) items</string>
+    <string name="Qty">\"Qty: \"</string>
+    <string name="Price">Price: $</string>
+    <string name="PriceNT">Price: NT$</string>
 </resources>

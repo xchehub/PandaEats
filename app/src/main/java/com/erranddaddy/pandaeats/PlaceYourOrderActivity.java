@@ -57,35 +57,27 @@ public class PlaceYourOrderActivity extends AppCompatActivity {
 
         cartItemsRecyclerView = findViewById(R.id.cartItemsRecyclerView);
 
-        buttonPlaceYourOrder.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onPlaceOrderButtonClick(restaurantModel);
-            }
-        });
+        buttonPlaceYourOrder.setOnClickListener(v -> onPlaceOrderButtonClick(restaurantModel));
 
-        switchDelivery.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    inputAddress.setVisibility(View.VISIBLE);
-                    inputCity.setVisibility(View.VISIBLE);
-                    inputState.setVisibility(View.VISIBLE);
-                    inputZip.setVisibility(View.VISIBLE);
-                    tvDeliveryChargeAmount.setVisibility(View.VISIBLE);
-                    tvDeliveryCharge.setVisibility(View.VISIBLE);
-                    isDeliveryOn = true;
-                    calculateTotalAmount(restaurantModel);
-                } else {
-                    inputAddress.setVisibility(View.GONE);
-                    inputCity.setVisibility(View.GONE);
-                    inputState.setVisibility(View.GONE);
-                    inputZip.setVisibility(View.GONE);
-                    tvDeliveryChargeAmount.setVisibility(View.GONE);
-                    tvDeliveryCharge.setVisibility(View.GONE);
-                    isDeliveryOn = false;
-                    calculateTotalAmount(restaurantModel);
-                }
+        switchDelivery.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (isChecked) {
+                inputAddress.setVisibility(View.VISIBLE);
+                inputCity.setVisibility(View.VISIBLE);
+                inputState.setVisibility(View.VISIBLE);
+                inputZip.setVisibility(View.VISIBLE);
+                tvDeliveryChargeAmount.setVisibility(View.VISIBLE);
+                tvDeliveryCharge.setVisibility(View.VISIBLE);
+                isDeliveryOn = true;
+                calculateTotalAmount(restaurantModel);
+            } else {
+                inputAddress.setVisibility(View.GONE);
+                inputCity.setVisibility(View.GONE);
+                inputState.setVisibility(View.GONE);
+                inputZip.setVisibility(View.GONE);
+                tvDeliveryChargeAmount.setVisibility(View.GONE);
+                tvDeliveryCharge.setVisibility(View.GONE);
+                isDeliveryOn = false;
+                calculateTotalAmount(restaurantModel);
             }
         });
         initRecyclerView(restaurantModel);
@@ -131,7 +123,7 @@ public class PlaceYourOrderActivity extends AppCompatActivity {
             return;
         }
         //start success activity..
-        Intent i = new Intent(PlaceYourOrderActivity.this, OrderSucceessActivity.class);
+        Intent i = new Intent(PlaceYourOrderActivity.this, OrderSuccessActivity.class);
         i.putExtra("RestaurantModel", restaurantModel);
         startActivityForResult(i, 1000);
     }

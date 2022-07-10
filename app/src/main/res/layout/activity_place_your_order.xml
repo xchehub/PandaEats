@@ -10,7 +10,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-
         <TextView android:id="@+id/tvCustomerDetails"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -18,7 +17,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_margin="10dp"
-            android:text="Customer Details"
+            android:text="@string/customer_details"
             android:textSize="18sp"
             android:textStyle="bold"/>
 
@@ -27,7 +26,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toStartOf="@+id/switchDelivery"
            app:layout_constraintTop_toBottomOf="@+id/tvCustomerDetails"
-            android:text="Pickup"
+            android:text="@string/pickup"
             android:textSize="18sp"
             android:textStyle="bold"/>
 
@@ -46,7 +45,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintStart_toEndOf="@+id/switchDelivery"
             app:layout_constraintTop_toBottomOf="@+id/tvCustomerDetails"
-            android:text="Delivery"
+            android:text="@string/delivery"
             android:textSize="18sp"
             android:textStyle="bold"/>
 
@@ -60,7 +59,7 @@
             android:layout_marginEnd="10dp"
             android:layout_marginTop="05dp"
             android:layout_marginBottom="05dp"
-            android:hint="Enter your name"/>
+            android:hint="@string/enter_your_name"/>
 
         <EditText android:id="@+id/inputAddress"
             android:layout_width="match_parent"
@@ -72,7 +71,7 @@
             android:layout_marginEnd="10dp"
             android:layout_marginTop="05dp"
             android:layout_marginBottom="05dp"
-            android:hint="Enter your address"
+            android:hint="@string/enter_your_address"
             android:visibility="gone"/>
 
         <EditText android:id="@+id/inputCity"
@@ -85,7 +84,7 @@
             android:layout_marginEnd="10dp"
             android:layout_marginTop="05dp"
             android:layout_marginBottom="05dp"
-            android:hint="Enter your city"
+            android:hint="@string/enter_your_city"
             android:visibility="gone"/>
 
         <EditText android:id="@+id/inputState"
@@ -98,7 +97,7 @@
             android:layout_marginEnd="10dp"
             android:layout_marginTop="05dp"
             android:layout_marginBottom="05dp"
-            android:hint="Enter your state"
+            android:hint="@string/enter_your_state"
             android:visibility="gone"/>
 
         <EditText android:id="@+id/inputZip"
@@ -111,7 +110,7 @@
             android:layout_marginEnd="10dp"
             android:layout_marginTop="05dp"
             android:layout_marginBottom="05dp"
-            android:hint="Enter your zip"
+            android:hint="@string/enter_your_zip"
             android:inputType="number"
             android:maxLength="5"
             android:visibility="gone"/>
@@ -123,7 +122,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/inputZip"
             android:layout_margin="10dp"
-            android:text="Card Details"
+            android:text="@string/card_details"
             android:textSize="18sp"
             android:textStyle="bold"/>
 
@@ -137,7 +136,7 @@
             android:layout_marginEnd="10dp"
             android:layout_marginTop="05dp"
             android:layout_marginBottom="05dp"
-            android:hint="Enter Card Number"
+            android:hint="@string/enter_card_number"
             android:inputType="number"
             android:maxLength="16"/>
 
@@ -151,7 +150,7 @@
             android:layout_marginEnd="10dp"
             android:layout_marginTop="05dp"
             android:layout_marginBottom="05dp"
-            android:hint="Enter Card expiry(mm/yyyy)"
+            android:hint="@string/enter_card_expiry_mm_yyyy"
             android:inputType="number"
             android:maxLength="6"/>
 
@@ -165,7 +164,7 @@
             android:layout_marginEnd="10dp"
             android:layout_marginTop="05dp"
             android:layout_marginBottom="05dp"
-            android:hint="Enter Card pin(3 digits)"
+            android:hint="@string/enter_card_pin_3_digits"
             android:inputType="number"
             android:maxLength="3"/>
 
@@ -176,7 +175,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/inputCardPin"
             android:layout_margin="10dp"
-            android:text="Total items in cart"
+            android:text="@string/total_items_in_cart"
             android:textSize="18sp"
             android:textStyle="bold"/>
 
@@ -195,7 +194,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cartItemsRecyclerView"
             android:layout_margin="10dp"
-            android:text="Sub total"
+            android:text="@string/sub_total"
             android:textSize="18sp"
             android:textStyle="bold"/>
 
@@ -215,7 +214,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvSubtotal"
             android:layout_margin="10dp"
-            android:text="Delivery Charge"
+            android:text="@string/delivery_charge"
             android:textSize="18sp"
             android:textStyle="bold"/>
 
@@ -235,7 +234,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvDeliveryCharge"
             android:layout_margin="10dp"
-            android:text="Total"
+            android:text="@string/total"
             android:textSize="18sp"
             android:textStyle="bold"/>
 
@@ -255,7 +254,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvTotal"
-            android:text="Place your order"
+            android:text="@string/place_your_order"
             android:textSize="16sp"
             android:textStyle="bold"
             android:gravity="center"

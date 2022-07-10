@@ -14,7 +14,7 @@
         android:theme="@style/Theme.PandaEats"
         tools:targetApi="31">
         <activity
-            android:name=".OrderSucceessActivity"
+            android:name=".OrderSuccessActivity"
             android:exported="false" />
         <activity
             android:name=".PlaceYourOrderActivity"

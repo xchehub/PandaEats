@@ -22,7 +22,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:text="Checkout"
+        android:text="@string/checkout"
         android:textSize="16dp"
         android:textStyle="bold"
         android:gravity="center"

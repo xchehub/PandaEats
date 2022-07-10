@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".OrderSucceessActivity">
+    tools:context=".OrderSuccessActivity">
 
 
     <TextView
@@ -16,7 +16,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         android:textSize="30sp"
         android:textStyle="bold"
-        android:text="Order places successfully."
+        android:text="@string/order_places_successfully"
         android:layout_margin="30dp"
         />
 

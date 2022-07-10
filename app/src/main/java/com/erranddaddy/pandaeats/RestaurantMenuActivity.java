@@ -44,18 +44,15 @@ public class RestaurantMenuActivity extends AppCompatActivity implements MenuLis
         initRecyclerView();
 
         buttonCheckout = findViewById(R.id.buttonCheckout);
-        buttonCheckout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (itemsInCartList != null && itemsInCartList.size() <= 0) {
-                    Toast.makeText(RestaurantMenuActivity.this, "Please add some items in cart", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                restaurantModel.setMenus(itemsInCartList);
-                Intent intent = new Intent(RestaurantMenuActivity.this, PlaceYourOrderActivity.class);
-                intent.putExtra("RestaurantModel", restaurantModel);
-                startActivityForResult(intent, 1000);
+        buttonCheckout.setOnClickListener(view -> {
+            if (itemsInCartList != null && itemsInCartList.size() <= 0) {
+                Toast.makeText(RestaurantMenuActivity.this, "Please add some items in cart", Toast.LENGTH_SHORT).show();
+                return;
             }
+            restaurantModel.setMenus(itemsInCartList);
+            Intent intent = new Intent(RestaurantMenuActivity.this, PlaceYourOrderActivity.class);
+            intent.putExtra("RestaurantModel", restaurantModel);
+            startActivityForResult(intent, 1000);
         });
     }
 
@@ -83,7 +80,7 @@ public class RestaurantMenuActivity extends AppCompatActivity implements MenuLis
         for (Menu m: itemsInCartList) {
             totalItemInCart = totalItemInCart +  m.getTotalInCart();
         }
-        buttonCheckout.setText("Checkout (" + totalItemInCart + ") items" );
+        buttonCheckout.setText(getString(R.string.CheckoutItems) + totalItemInCart + getString(R.string.Items) );
     }
 
     @Override
@@ -97,7 +94,7 @@ public class RestaurantMenuActivity extends AppCompatActivity implements MenuLis
             for (Menu m: itemsInCartList) {
                 totalItemInCart = totalItemInCart + m.getTotalInCart();
             }
-            buttonCheckout.setText("Checkout (" + totalItemInCart + ") items");
+            buttonCheckout.setText(getString(R.string.CheckoutItems) + totalItemInCart + getString(R.string.Items) );
         }
     }
 
@@ -110,7 +107,7 @@ public class RestaurantMenuActivity extends AppCompatActivity implements MenuLis
             for (Menu m: itemsInCartList) {
                 totalItemInCart = totalItemInCart + m.getTotalInCart();
             }
-            buttonCheckout.setText("Checkout (" + totalItemInCart + ") items");
+            buttonCheckout.setText(getString(R.string.CheckoutItems) + totalItemInCart + getString(R.string.Items) );
         }
     }
 
