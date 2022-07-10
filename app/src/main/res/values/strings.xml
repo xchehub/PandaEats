@@ -23,7 +23,7 @@
     <string name="RestaurantList">Restaurant List</string>
     <string name="CheckoutItems">Checkout (</string>
     <string name="Items">) items</string>
-    <string name="Qty">\"Qty: \"</string>
+    <string name="Qty">Qty:</string>
     <string name="Price">Price: $</string>
     <string name="PriceNT">Price: NT$</string>
 </resources>
