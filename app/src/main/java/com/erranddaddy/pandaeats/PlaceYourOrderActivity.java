@@ -17,6 +17,7 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.erranddaddy.pandaeats.adapters.PlaceYourOrderAdapter;
 import com.erranddaddy.pandaeats.model.Menu;
 import com.erranddaddy.pandaeats.model.RestaurantModel;
 
