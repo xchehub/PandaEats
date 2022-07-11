@@ -67,8 +67,8 @@ public class LandingActivity extends AppCompatActivity {
         //this function will return to us the state of the location service
         //if the gps or the network provider is enabled then it will return true otherwise it will return false
         LocationManager locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
-        if ( locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER) ||
-                locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)) {
+        if (!(locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER) ||
+                locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER))) {
             Toast.makeText(this, "Location service is not enabled", Toast.LENGTH_SHORT).show();
         }
     }
