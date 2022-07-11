@@ -13,9 +13,9 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.erranddaddy.pandaeats.adapters.PlaceYourOrderAdapter;
 import com.erranddaddy.pandaeats.model.Menu;
@@ -25,7 +25,7 @@ public class PlaceYourOrderActivity extends AppCompatActivity {
 
     private EditText inputName, inputAddress, inputCity, inputState, inputZip,inputCardNumber, inputCardExpiry, inputCardPin ;
     private RecyclerView cartItemsRecyclerView;
-    private TextView tvSubtotalAmount, tvDeliveryChargeAmount, tvDeliveryCharge, tvTotalAmount, buttonPlaceYourOrder;
+    private TextView tvSubtotalAmount, tvDeliveryChargeAmount, tvDeliveryCharge, tvTotalAmount, buttonPlaceYourOrder, buttonAutoFill;
     private SwitchCompat switchDelivery;
     private boolean isDeliveryOn;
     private PlaceYourOrderAdapter placeYourOrderAdapter;
@@ -53,12 +53,13 @@ public class PlaceYourOrderActivity extends AppCompatActivity {
         tvDeliveryCharge = findViewById(R.id.tvDeliveryCharge);
         tvTotalAmount = findViewById(R.id.tvTotalAmount);
         buttonPlaceYourOrder = findViewById(R.id.buttonPlaceYourOrder);
+        buttonAutoFill = findViewById(R.id.tvAutoFill);
         switchDelivery = findViewById(R.id.switchDelivery);
 
         cartItemsRecyclerView = findViewById(R.id.cartItemsRecyclerView);
 
         buttonPlaceYourOrder.setOnClickListener(v -> onPlaceOrderButtonClick(restaurantModel));
-
+        buttonAutoFill.setOnClickListener(v -> onAutoFillButtonClick(restaurantModel));
         switchDelivery.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (isChecked) {
                 inputAddress.setVisibility(View.VISIBLE);
@@ -69,6 +70,7 @@ public class PlaceYourOrderActivity extends AppCompatActivity {
                 tvDeliveryCharge.setVisibility(View.VISIBLE);
                 isDeliveryOn = true;
                 calculateTotalAmount(restaurantModel);
+                buttonAutoFill.setVisibility(View.VISIBLE);
             } else {
                 inputAddress.setVisibility(View.GONE);
                 inputCity.setVisibility(View.GONE);
@@ -78,6 +80,7 @@ public class PlaceYourOrderActivity extends AppCompatActivity {
                 tvDeliveryCharge.setVisibility(View.GONE);
                 isDeliveryOn = false;
                 calculateTotalAmount(restaurantModel);
+                buttonAutoFill.setVisibility(View.GONE);
             }
         });
         initRecyclerView(restaurantModel);
@@ -128,6 +131,14 @@ public class PlaceYourOrderActivity extends AppCompatActivity {
         startActivityForResult(i, 1000);
     }
 
+    private void onAutoFillButtonClick(RestaurantModel restaurantModel) {
+//        if(isDeliveryOn && buttonAutoFill.getVisibility()) {
+//
+//        }
+//        Toast.makeText(PlaceYourOrderActivity.this, "auto fill clicked", Toast.LENGTH_SHORT).show();
+
+    }
+
     private void initRecyclerView(RestaurantModel restaurantModel) {
         cartItemsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         placeYourOrderAdapter = new PlaceYourOrderAdapter(restaurantModel.getMenus());
@@ -152,4 +163,6 @@ public class PlaceYourOrderActivity extends AppCompatActivity {
         setResult(Activity.RESULT_CANCELED);
         finish();
     }
+
+
 }

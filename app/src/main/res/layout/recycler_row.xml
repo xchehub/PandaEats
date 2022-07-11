@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <androidx.cardview.widget.CardView android:id="@+id/cardView"
         android:layout_width="match_parent"
@@ -44,7 +44,7 @@
                 android:textColor="@color/black"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="10dp"
                 />
             <TextView android:id="@+id/restaurantHours"
                 android:layout_width="wrap_content"
@@ -54,7 +54,7 @@
                 android:textColor="@color/black"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="10dp"
                 />
         </LinearLayout>
     </androidx.cardview.widget.CardView>>
