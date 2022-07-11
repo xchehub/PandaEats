@@ -16,6 +16,7 @@ import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.os.Looper;
 import android.text.TextUtils;
@@ -169,10 +170,35 @@ public class PlaceYourOrderActivity extends AppCompatActivity {
     }
 
     private void getLastLocation() {
-//        AtomicReference<Location> location;
-//        location = new Location();
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
-                && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+//        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
+//                && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+//            // TODO: Consider calling
+//            //    ActivityCompat#requestPermissions
+//            // here to request the missing permissions, and then overriding
+//            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+//            //                                          int[] grantResults)
+//            // to handle the case where the user grants the permission. See the documentation
+//            // for ActivityCompat#requestPermissions for more details.
+//            return;
+//        }
+//        fusedLocationProviderClient.getLastLocation().addOnCompleteListener(task -> {
+//            Location location = task.getResult();
+//            if (location == null) {
+//                location.set(newLocationData());
+//            } else {
+//                Log.d("Debug:" ,"Device Location Longitude :"+ location.getLongitude());
+//                Log.d("Debug:" ,"Device Location Altitude:"+ location.getAltitude());
+//            }
+//
+//            // fill in
+//            if (location != null) {
+//                setAddressInfo(location.getAltitude(), location.getLongitude());
+//            }
+//        });
+
+        LocationManager locationManager = (LocationManager)
+                getApplicationContext().getSystemService(LOCATION_SERVICE);
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
             //    ActivityCompat#requestPermissions
             // here to request the missing permissions, and then overriding
@@ -182,26 +208,16 @@ public class PlaceYourOrderActivity extends AppCompatActivity {
             // for ActivityCompat#requestPermissions for more details.
             return;
         }
-        fusedLocationProviderClient.getLastLocation().addOnCompleteListener(task -> {
-            Location location = task.getResult();
-            if (location == null) {
-                location.set(newLocationData());
-            } else {
-                Log.d("Debug:" ,"Your Location:"+ location.getLongitude());
-                //textView.text = "You Current Location is : Long: "+ location.longitude + " , Lat: " + location.latitude + "\n" + getCityName(location.latitude,location.longitude)
-            }
-
-            // fill in
-            if (location != null) {
+        Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+        if (location != null) {
                 setAddressInfo(location.getAltitude(), location.getLongitude());
-            }
-        });
-
+        }
     }
 
     private void setAddressInfo(double altitude, double longitude) {
 
         Geocoder geoCoder = new Geocoder(this, Locale.getDefault());
+
         try {
             List<Address> address = geoCoder.getFromLocation(altitude, longitude, 3);
 
@@ -229,8 +245,8 @@ public class PlaceYourOrderActivity extends AppCompatActivity {
             @Override
             public void onLocationResult(LocationResult locationResult) {
                 Location lastLocation = locationResult.getLastLocation();
-                Log.d("Debug:","last last location Longitude: "+ lastLocation.getLongitude());
-                Log.d("Debug:","last last location: "+ lastLocation.getAltitude());
+                Log.d("Debug:","new Device Location Longitude: "+ lastLocation.getLongitude());
+                Log.d("Debug:","new Device Location Altitude: "+ lastLocation.getAltitude());
                 newLocation[0] = lastLocation;
             }
         };
