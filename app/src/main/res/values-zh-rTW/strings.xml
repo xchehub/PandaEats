@@ -6,7 +6,7 @@
     <string name="customer_details">客戶明細</string>
     <string name="delivery">運送</string>
     <string name="pickup">選取</string>
-    <string name="enter_your_name">輸入您的名字</string>
+    <string name="enter_your_name">輸入您的姓名</string>
     <string name="enter_your_address">輸入您的地址</string>
     <string name="enter_your_city">嶿入您的城市</string>
     <string name="enter_your_state">輸入您的地區</string>
@@ -21,7 +21,7 @@
     <string name="total">合計</string>
     <string name="place_your_order">下單</string>
     <string name="order_places_successfully">下單成功</string>
-    <string name="RestaurantList">餐踢列表</string>
+    <string name="RestaurantList">餐廳列表</string>
     <string name="CheckoutItems">結帳 (</string>
     <string name="Items">) 個</string>
     <string name="Qty">數量:</string>
