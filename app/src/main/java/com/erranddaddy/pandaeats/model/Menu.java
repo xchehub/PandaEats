@@ -72,4 +72,8 @@ public class Menu implements Parcelable {
         parcel.writeString(url);
         parcel.writeInt(totalInCart);
     }
+
+    public float getSubTotalAmount() {
+        return price * totalInCart;
+    }
 }

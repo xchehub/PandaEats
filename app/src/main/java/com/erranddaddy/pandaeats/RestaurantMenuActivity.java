@@ -29,6 +29,11 @@ public class RestaurantMenuActivity extends AppCompatActivity implements MenuLis
     private int totalItemInCart = 0;
     private TextView buttonCheckout;
 
+//    enum RequestCode {
+//        SUCCESS = 1000,
+//        FAIL
+//    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,11 +80,12 @@ public class RestaurantMenuActivity extends AppCompatActivity implements MenuLis
             itemsInCartList = new ArrayList<>();
         }
         itemsInCartList.add(menu);
-        totalItemInCart = 0;
-
-        for (Menu m: itemsInCartList) {
-            totalItemInCart = totalItemInCart +  m.getTotalInCart();
-        }
+//        totalItemInCart = 0;
+//
+//        for (Menu m: itemsInCartList) {
+//            totalItemInCart = totalItemInCart +  m.getTotalInCart();
+//        }
+        totalItemInCart += menu.getTotalInCart();
         buttonCheckout.setText(getString(R.string.CheckoutItems) + totalItemInCart + getString(R.string.Items) );
     }
 
@@ -102,11 +108,12 @@ public class RestaurantMenuActivity extends AppCompatActivity implements MenuLis
     public void onRemoveFromCartClick(Menu menu) {
         if (itemsInCartList.contains(menu)) {
             itemsInCartList.remove(menu);
-            totalItemInCart = 0;
-
-            for (Menu m: itemsInCartList) {
-                totalItemInCart = totalItemInCart + m.getTotalInCart();
-            }
+//            totalItemInCart = 0;
+//
+//            for (Menu m: itemsInCartList) {
+//                totalItemInCart = totalItemInCart + m.getTotalInCart();
+//            }
+            totalItemInCart -= menu.getTotalInCart();
             buttonCheckout.setText(getString(R.string.CheckoutItems) + totalItemInCart + getString(R.string.Items) );
         }
     }
@@ -125,6 +132,7 @@ public class RestaurantMenuActivity extends AppCompatActivity implements MenuLis
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+//        if(requestCode == RequestCode.SUCCESS && resultCode == Activity.RESULT_OK) {
         if(requestCode == 1000 && resultCode == Activity.RESULT_OK) {
             finish();
         }

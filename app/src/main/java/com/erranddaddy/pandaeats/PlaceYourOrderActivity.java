@@ -114,7 +114,8 @@ public class PlaceYourOrderActivity extends AppCompatActivity {
         float subTotalAmount = 0f;
 
         for (Menu m : restaurantModel.getMenus()) {
-            subTotalAmount += m.getPrice() * m.getTotalInCart();
+            //subTotalAmount += m.getPrice() * m.getTotalInCart();
+            subTotalAmount += m.getSubTotalAmount();
         }
 
         tvSubtotalAmount.setText(String.format("$ %.2f", subTotalAmount));
@@ -197,7 +198,7 @@ public class PlaceYourOrderActivity extends AppCompatActivity {
 //        LocationManager locationManager = (LocationManager)
 //                getApplicationContext().getSystemService(LOCATION_SERVICE);
 //        Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-//        locationManager.getCurrentLocation(LocationManager.GPS_PROVIDER, );
+//        locationManager.getCurrentLocation(LocationManager.GPS_PROVIDER, 1);
 //        if (location != null) {
 //                setAddressInfo(location.getLatitude(), location.getLongitude());
 //        }
